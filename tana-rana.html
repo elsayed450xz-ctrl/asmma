@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تنه و رنه | Tana & Rana</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  color: #2e004d;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #ffd1e8, #f3a4d0, #d3a0ff, #ffe8f6);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* 🌈 خلفية متحركة */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💖 شاشة الدخول */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #f8a1d1, #b47cd4, #ffb3e0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 999;
+  animation: fadeOut 1.5s ease forwards;
+  animation-delay: 4s;
+}
+
+.intro h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  animation: textPop 2s ease-in-out;
+}
+
+.intro p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes textPop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* 👑 هيدر */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  background: rgba(209, 71, 122, 0.85);
+  border-bottom: 4px solid #ffd700;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: slideDown 1.3s ease forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes slideDown {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* ✨ المحتوى */
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* الحركات */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s ease;
+}
+
+.slideRight {
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: all 1s ease;
+}
+
+.slideLeft {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translate(0,0) !important;
+}
+
+/* المنتجات */
+h2 {
+  color: #a8326e;
+  border-right: 5px solid #d1477a;
+  padding-right: 10px;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: linear-gradient(90deg, #fff0f5, #ffe6f0);
+  margin: 15px 0;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+ul li:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(90deg, #ffe6f8, #ffd7ef);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+ul p {
+  margin: 5px 0 10px 0;
+  color: #555;
+  font-weight: 400;
+}
+
+button {
+  display: block;
+  margin: 40px auto;
+  padding: 14px 35px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #d1477a, #b47cd4);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #b47cd4, #d1477a);
+}
+
+footer {
+  text-align: center;
+  color: #555;
+  padding: 25px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="intro">
+  <h1>🌸 تنه و رنه 🌸</h1>
+  <p>عالم من الأناقة والجمال 💎</p>
+</div>
+
+<header>
+  <h1>تنه و رنه</h1>
+  <p>تصاميم فريدة بألوان ملكية</p>
+</header>
+
+<section>
+  <h2 class="slideRight">منتجاتنا</h2>
+  <ul>
+    <li class="slideLeft">اكسسوارات شعر</li>
+    <p class="slideRight">توك، بندانه، دبابيس، كليبسات</p>
+
+    <li class="slideRight">مجوهرات يدوية</li>
+    <p class="slideLeft">أساور، خواتم، قلادات</p>
+
+    <li class="slideLeft">حقائب صغيرة</li>
+    <p class="slideRight">شنط يد، شنط كتف</p>
+
+    <li class="slideRight">اكسسوارات مخصصة حسب الطلب</li>
+    <p class="slideLeft">تصاميم فريدة تناسب ذوقك</p>
+  </ul>
+
+  <button id="contactBtn" class="fadeUp">تواصلي معنا 💌</button>
+</section>
+
+<footer id="footer">© 2026 تنه و رنه - جميع الحقوق محفوظة 💖</footer>
+
+<script>
+const btn = document.getElementById("contactBtn");
+btn.addEventListener("click", () => {
+  btn.innerText = "✨ شكراً لتواصلك 💫";
+  btn.style.background = "linear-gradient(90deg, #ffd700, #d1477a)";
+  alert("سعداء بتواصلك 💖 تابعي صفحتنا على إنستغرام @TanaRana_Store");
+});
+
+/* 🔮 الأنيميشن أثناء التمرير */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fadeUp, .slideRight, .slideLeft').forEach(el => observer.observe(el));
+observer.observe(document.getElementById("footer"));
+</script>
+
+</body>
+</html>
